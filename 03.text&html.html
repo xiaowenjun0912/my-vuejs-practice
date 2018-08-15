@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- v-text 不会把绑定的数据解析成为html
+        v-html 会把绑定的数据解析成为html
+    -->
+    <div id="app">
+        <a v-text="message" href="{message}"></a>
+
+        <div v-html="message"></div>
+    </div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>    
+    let app = new Vue({
+        el:'#app',
+        data:{message:'<a href="#">团结就是力量坚持就是胜利</a>'}
+    })
+</script>

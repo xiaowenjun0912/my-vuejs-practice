@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <input v-on:mouseenter="sayHi" v-on:click="changeValue" type="button" value="点我试试" >
+        <p @click="makeHair">内容是:{{msg}}</p>
+        <a @click="toBaidu" href="https://www.baidu.com">去百度</a>
+    </div>
+</body>
+</html>
+<script src="./lib/vue.js"></script>
+<script>
+
+    let app = new Vue({
+        el:'.app',
+        data:{msg:'技术'},
+        methods:{
+            changeValue(){
+                this.msg='正在修炼搬砖';
+            },
+            sayHi(){
+                console.log('你的鼠标一进来了');
+            },
+            makeHair(){
+                this.msg="今天是2018年8月15日抗战胜利73周年";
+            },
+            toBaidu(){
+                this.msg='百度内容不良,还是去谷歌,爸'
+            }
+        }
+
+        
+    })
+    </script>
